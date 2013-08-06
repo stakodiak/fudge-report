@@ -1,0 +1,95 @@
+<html>
+<head>
+	<title>{{ title|upper }} 2013&reg;</title>
+	<style>
+		body {
+			font-family: monospace;
+		}
+		.left {
+			float: left;
+			padding: 0% 1% 0% 0%;
+			width: 29%;
+			border-right: solid #999999;
+			border-width: 1px;
+		}
+
+		.middle {
+			margin-left: 31%;
+			margin-right: 40%;
+	
+		}
+		.midelem {
+		}
+
+		.right {
+		    float: right;
+		    padding: 0% 0% 0% 1%;
+		    width: 38%;
+			border-left: solid #999999;
+			border-width: 1px;
+		}
+		.fudge {
+			margin:0 auto;
+			margin-top: -5%;
+			margin-bottom: -2.5%;
+		}
+		#fittext {
+			padding-bottom: 1%;
+			font-size: 12px;
+			width: 80%;
+			text-align: center;
+			color:#000;
+			font: 95px/1 "Impact", "HelveticaNeue-CondensedBlack";
+			font-style: italic;
+			text-transform: uppercase;
+			display: block;
+			text-shadow:#bbbbbb -7px 2px 0;
+			margin: 5% auto 5%;
+		}
+		
+	</style>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+ 	<script src="https://rawgithub.com/davatron5000/FitText.js/master/jquery.fittext.js"></script>
+	{% include "base/analytics.js" %}
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+</head>
+
+<body bgcolor="#FFFFFF" text="#000000" link="#000000" vlink="#000000" alink="#000000"    >
+    <center>
+        <font face="arial" size="+7">
+            <img src="{{ main.image }}" />
+            </br>
+            <a href="{{ main.url }}">{{ main.title }}</a>
+        </font>
+        <div class="fudge">
+            <i><h1 id="fittext">{{ title }}</h1></i>
+        <script type="text/javascript">
+            $("#fittext").fitText(1.0);
+        </script>
+    </center>
+
+    <div class="left">
+    {% for item in left %}
+        <a href="{{ item.url }}">{{ item.title|safe}}</a>
+        <hr>
+    {% endfor %}
+    </div>
+
+    <div class="right">
+    {% for item in right %}
+        <a href="{{ item.url }}">{{ item.title|safe}}</a>
+        <hr>
+    {% endfor %}
+    </div>
+
+    <div class="middle">
+    {% for item in middle %}
+        <div class="midelem">
+        <a href="{{ item.url }}">{{ item.title|safe}}</a>
+        <hr>
+        </div>
+    {% endfor %}
+    </div>
+    <div style="clear: both"></div>
+</body>
+</html>

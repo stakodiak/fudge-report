@@ -11,6 +11,7 @@ See also:
 
 ### Roadmap:
   
-  * Ignore icon images
-  * Load all links for poor-formed RSS feed
-  * Catch broken links and error HTTP responses
+  * Ignore icon images.
+  * Load all links for poor-formed RSS feed.
+  * Catch broken links and error HTTP responses.
+  * Keep reasonable bounds on ```main``` image.
